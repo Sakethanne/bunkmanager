@@ -37,15 +37,13 @@ input {
         var reqper = parseInt(document.getElementById('reqper').value);
         var temp4 = present / held;
         var actper = temp4 * 100;
-         document.getElementById('beforemessage').innerHTML = "Hello " + uname.toUpperCase() + " Your Current Attendance Percentage Is "+actper+"% . ";
+         document.getElementById('beforemessage').innerHTML = "Hello " + uname.toUpperCase() + " Your Current Attendance Percentage Is "+actper+"% . <hr>";
         if( reqper >= actper )
             {
                 temp1 = parseInt((reqper/100)*held);
         temp2 = temp1 - present;
         var temp3 = (1-(reqper/100));
-        console.log(temp3);
-        var reqclasses = temp2/temp3;
-        console.log(reqclasses);
+        var reqclasses = parseInt(temp2/temp3);
         document.getElementById('message').innerHTML = "Hmm!!  You Have to Sit for " + reqclasses + " Classes without Bunking to reach "+reqper + "% Attendance";
         
             }
@@ -55,9 +53,7 @@ input {
                         temp1 = parseInt((reqper/100)*held);
         temp2 = present - temp1;
         var temp3 = ((reqper/100));
-        console.log(temp3);
         reqclasses = parseInt(temp2/temp3);
-        console.log(reqclasses);
         document.getElementById('message').innerHTML = "Hurray!! You can Bunk for " + reqclasses + " Classes to have "+ reqper + "% Attendance";
         }
     }
