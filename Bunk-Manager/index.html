@@ -21,6 +21,11 @@ button {
   display: inline-block;
   font-size: 16px;
 }
+input {
+  border: none;
+  border-bottom: 2px solid green;
+  
+}
         </style>
         <script type="text/javascript">
         	function calculate() {
@@ -41,7 +46,7 @@ button {
         console.log(temp3);
         var reqclasses = temp2/temp3;
         console.log(reqclasses);
-        document.getElementById('message').innerHTML = "Hmm!!  YOU HAVE TO SIT FOR " + reqclasses + " CLASSES WITHOUT BUNKING TO REACH "+reqper + " ATTENDANCE";
+        document.getElementById('message').innerHTML = "Hmm!!  You Have to Sit for " + reqclasses + " Classes without Bunking to reach "+reqper + "% Attendance";
         
             }
             else
@@ -53,7 +58,7 @@ button {
         console.log(temp3);
         reqclasses = parseInt(temp2/temp3);
         console.log(reqclasses);
-        document.getElementById('message').innerHTML = "Hurray!! YOU CAN BUNK FOR " + reqclasses + " CLASSES TO REACH "+ reqper + " ATTENDANCE";
+        document.getElementById('message').innerHTML = "Hurray!! You can Bunk for " + reqclasses + " Classes to have "+ reqper + "% Attendance";
         }
     }
         </script>
@@ -62,7 +67,7 @@ button {
       
 		<table border="2" align="center" valign="center">
                     <tr align="center">
-                        <td colspan="2" text-align="center" align="center" valign="middle" style="font-weight: bold;font-family: cursive;font-size: 150%">Bunk Manager</td>
+                        <td colspan="2" text-align="center" align="center" valign="middle" style="font-weight: bold;font-family: cursive;font-size: 150%;color: white" bgcolor="#4CAF50">BUNK MANAGER</td>
                     </tr>	
                     <tr>
 				<td>Enter Your Name : </td>
