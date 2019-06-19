@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>User Details</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style type="text/css">
+        	table, th, td {
+  text-align: left;
+}
+tr:hover {background-color: #f5f5f5;}
+button {
+  background-color: #4CAF50; /* Green */
+
+  border: none;
+  color: white;
+  padding: 7px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+        </style>
+        <script type="text/javascript">
+        	function calculate() {
+        var temp1 = 0;
+        var temp2 = 0;
+        var uname = document.getElementById('uname').value;
+        var present = parseInt(document.getElementById('present').value);
+        var held = parseInt(document.getElementById('held').value);
+        var reqper = parseInt(document.getElementById('reqper').value);
+        var temp4 = present / held;
+        var actper = temp4 * 100;
+         document.getElementById('beforemessage').innerHTML = "Hello " + uname.toUpperCase() + " Your Current Attendance Percentage Is "+actper+"% . ";
+        if( reqper >= actper )
+            {
+                temp1 = parseInt((reqper/100)*held);
+        temp2 = temp1 - present;
+        var temp3 = (1-(reqper/100));
+        console.log(temp3);
+        var reqclasses = temp2/temp3;
+        console.log(reqclasses);
+        document.getElementById('message').innerHTML = "Hmm!!  YOU HAVE TO SIT FOR " + reqclasses + " CLASSES WITHOUT BUNKING TO REACH "+reqper + " ATTENDANCE";
+        
+            }
+            else
+                {
+                        
+                        temp1 = parseInt((reqper/100)*held);
+        temp2 = present - temp1;
+        var temp3 = ((reqper/100));
+        console.log(temp3);
+        reqclasses = parseInt(temp2/temp3);
+        console.log(reqclasses);
+        document.getElementById('message').innerHTML = "Hurray!! YOU CAN BUNK FOR " + reqclasses + " CLASSES TO REACH "+ reqper + " ATTENDANCE";
+        }
+    }
+        </script>
+    </head>
+    <body>
+      
+		<table border="2" align="center" valign="center">
+                    <tr align="center">
+                        <td colspan="2" text-align="center" align="center" valign="middle" style="font-weight: bold;font-family: cursive;font-size: 150%">Bunk Manager</td>
+                    </tr>	
+                    <tr>
+				<td>Enter Your Name : </td>
+				<td><input type="text" id ="uname" placeholder="Your Name" required></td>
+			</tr>
+                    <tr>
+				<td>Enter Number of Classes Present : </td>
+				<td><input type="number" id="present" placeholder="Classes you attended" required></td>
+			</tr>
+			<tr>
+				<td>Enter Number of classes Held:</td>
+				<td><input type="number" id="held" placeholder="Classes Held" required></td>
+			</tr>
+                        <tr>
+				<td>Enter Required Attendance Percentage:</td>
+				<td><input type="number" id="reqper" placeholder="Your Required Attendance Percentage" required></td>
+			</tr>
+			<tr align="center">
+				<td colspan="2" align="center"><button onclick="calculate()" align="center">Calculate Bunk</button></td>
+			</tr>
+		</table>
+		<hr>
+		<hr>
+	<div id="beforemessage" align="center" style="font-family: cursive;font-size:120%;font-weight: bold;border: 2%"></div>
+	<div id="message" align="center" style="font-family: cursive;font-size:120%;font-weight: bold;border: 2%"></div>
+    </body>
+</html>
