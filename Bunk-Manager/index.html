@@ -8,6 +8,10 @@
         <style type="text/css">
         	table, th, td {
   text-align: left;
+
+}
+tr {
+	font-family: Lucida Sans Unicode;
 }
 tr:hover {background-color: #f5f5f5;}
 button {
@@ -24,6 +28,7 @@ button {
 input {
   border: none;
   border-bottom: 2px solid green;
+  font-family: Lucida Sans Unicode;
   
 }
         </style>
@@ -38,6 +43,10 @@ input {
         var temp4 = present / held;
         var actper = temp4 * 100;
          document.getElementById('beforemessage').innerHTML = "Hello " + uname.toUpperCase() + " Your Current Attendance Percentage Is "+actper+"% . <hr>";
+         if(present > held)
+         {
+         	alert("The Present Classes are More than Held Classes");
+         }
         if( reqper >= actper )
             {
                 temp1 = parseInt((reqper/100)*held);
